@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gpe-review"
+version = "0.0.0"
+description = "GPE benchmark evaluation, source-aware retrieval, and controlled evidence poisoning"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+dependencies = [
+  "numpy<2.0",
+  "matplotlib",
+  "openai",
+  "aq-llm-pivot==0.1.0",
+  "python-dotenv",
+  "requests-cache",
+  "beautifulsoup4",
+  "arxiv",
+  "wikipedia-api",
+  "praw",
+  "ddgs",
+  "newspaper4k",
+]
+
+[tool.setuptools.packages.find]
+include = ["gpe*"]
+
+[tool.setuptools.package-data]
+gpe = ["data/*.jsonl", "data/*.json", "data/graph/*.jsonl"]
